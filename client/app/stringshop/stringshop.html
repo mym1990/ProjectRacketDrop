@@ -1,3 +1,6 @@
-<div class="col-md-12">
-This is the stringshop view.
+<div class="text-center">
+  <h1>Item Index Page</h1>
+  <div ng-repeat="item in ctrl.inventory">
+    <a ng-click="ctrl.goItem(item)">{{ item.name + ' : ' + (item.price | currency) }}</a>
+  </div>
 </div>
