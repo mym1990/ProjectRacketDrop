@@ -3,7 +3,7 @@
 
   angular
     .module('racketdropApp')
-    .controller('ItemShowController', ItemShowController);
+    .controller('StringShowController', ItemShowController);
 
   /** @ngInject */
   function ItemShowController(ItemService, $stateParams) {

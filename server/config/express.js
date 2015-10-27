@@ -15,6 +15,20 @@ var errorHandler = require('errorhandler');
 var path = require('path');
 var config = require('./environment');
 var passport = require('passport');
+// Set your secret key: remember to change this to your live secret key in production
+// See your keys here https://dashboard.stripe.com/account/apikeys
+var stripe = require("stripe")(
+  "sk_test_1PAKHEqD7GVWLCOqDPKXl3MU"
+);
+
+stripe.charges.create({
+  amount: 400,
+  currency: "usd",
+  source: "tok_16xiTPK94EkWQxgQ08oCJLpN", // obtained with Stripe.js
+  description: "Charge for test@example.com"
+}, function(err, charge) {
+  // asynchronously called
+});
 
 module.exports = function(app) {
   var env = app.get('env');

@@ -19,15 +19,15 @@ angular.module('racketdropApp')
         controller: 'SettingsCtrl',
         authenticate: true
       })
-      .state('strings', {
+      .state('items', {
         url: '/stringshop',
         templateUrl: 'app/stringshop/stringshop.html',
         controller: 'ItemIndexController',
         controllerAs: 'ctrl',
         authenticate: true
       })
-      .state('stringDetail', {
-        url: '/stringshop/:stringId',
+      .state('itemDetail', {
+        url: '/stringshop/:itemId',
         templateUrl: 'app/stringshop/show.html',
         controller: 'StringShowController',
         controllerAs: 'ctrl',

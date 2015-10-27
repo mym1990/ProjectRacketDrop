@@ -4,7 +4,11 @@ angular.module('racketdropApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Home',
-      'neworder': 'New Order'
+      'link' : '/'
+    },
+    {
+      'title': 'New Order',
+      'link': '/stringshop'
     }];
 
     $scope.isCollapsed = true;
@@ -14,7 +18,7 @@ angular.module('racketdropApp')
 
     $scope.logout = function() {
       Auth.logout();
-      $location.path('/login');
+      $location.path('/');
     };
 
     $scope.isActive = function(route) {
