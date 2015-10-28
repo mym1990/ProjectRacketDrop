@@ -5,10 +5,6 @@ angular.module('racketdropApp')
     $scope.menu = [{
       'title': 'Home',
       'link' : '/'
-    },
-    {
-      'title': 'New Order',
-      'link': '/stringshop'
     }];
 
     $scope.isCollapsed = true;

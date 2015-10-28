@@ -1,6 +1,11 @@
-<section class="container-fluid item">
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<section class="container item">
   <div class="row">
     <h2 class="text-center">{{ ctrl.item.name }}</h2>
+    <div class="col-md-4 item-image">
+      <img class="pull-right" class="middle" width=200px src="/assets/images/inventory/{{ctrl.item.imageFile}}"/>
+    </div>
     <div class="col-md-4 col-md-offset-2">
       <dl class="dl-horizontal">
         <dt>Category:</dt>
@@ -11,17 +16,46 @@
         <dd>{{ ctrl.item.rating }} / 5</dd>
         <dt>Description:</dt>
         <dd>{{ ctrl.item.description }}</dd>
+        <dt>Reviews:</dt>
+          <br>
+          <br>
+        <li ng-repeat="review in ctrl.item.reviews">
+          <blockquote>
+            Stars: {{review.stars}}
+            {{review.body}}
+            by: {{review.author}}
+          </blockquote>
+        </li>
       </dl>
+
+      <form name="reviewForm" ng-controller="StringShowController as reviewCtrl" ng-submit="reviewCtrl.addReview(item)">
+        <blockquote>
+          <strong>{{reviewCtrl.review.stars}} Stars</strong>
+          {{reviewCtrl.review.body}}
+          <cite class="clearfix">{{reviewCtrl.review.author}}</cite>
+        </blockquote>
+        <h4>Submit a review</h4>
+        <fieldset class="form-group">
+          <select ng-model="review.stars" class="form-cointrol" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
+            <option value="">Rate the product</option>
+          </select>
+        </fieldset>
+        <fieldset class="form-group">
+        <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review" title="Review"></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+        <input ng-model="reviewCtrl.review.author" class="form-control" placeholder="John Doe" title="Email">
+        </fieldset>
+        <fieldset class="form-group">
+          <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+        </fieldset>
+      </form>
 
       <div class="back">
         <button type="button"
-                class="btn btn-primary"
+                class="btn btn-primary pull-right"
                 onclick="window.history.back()">Back</button>
       </div>
-    </div>
-
-    <div class="col-md-4 item-image">
-      <img class="middle" width=200px src="/assets/images/inventory/{{ctrl.item.imageFile}}"/>
     </div>
   </div>
 </section>

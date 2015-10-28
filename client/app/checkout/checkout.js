@@ -7,5 +7,5 @@ angular.module('racketdropApp')
         url: '/checkout',
         templateUrl: 'app/checkout/checkout.html',
         controller: 'CheckoutCtrl'
-      });
+      })
   });

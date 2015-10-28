@@ -5,11 +5,9 @@ angular.module('racketdropApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ui.bootstrap',
-  'angular-stripe'
+  'ui.bootstrap'
   ])
-  .config(function ($stateProvider, stripeProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
-    stripeProvider.setPublishableKey('sk_test_1PAKHEqD7GVWLCOqDPKXl3MU');
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
       .otherwise('/');
 
