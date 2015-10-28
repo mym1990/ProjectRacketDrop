@@ -1,5 +1,26 @@
+.row {
+    top: 10px;
+    position: relative;
+}
+
+.glyphicon {
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+.feature {
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+}
+.lead {
+    top: 70px;
+    position: relative;
+}
 .thing-form {
-    margin: 20px 0;
+    margin: -20px 0;
 }
 
 #banner {
@@ -8,28 +29,36 @@
 }
 
 #banner h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+    font-family: 'Poiret One';
+    font-size: 72px;
+    letter-spacing: 3px;
+    top: 50px;
+    position: relative;
 }
 
 .hero-unit {
+    background: url('../../assets/images/TennisRacketBG2.jpg') no-repeat;
+    background-size: cover;
     position: relative;
     height: 500px;
     padding: 30px 15px;
     color: #F5F5F5;
     text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
+/*    background: #4393B9;*/
 }
 
 .footer {
     text-align: center;
+    position: relative;
     padding: 30px 0;
-    margin-top: 70px;
+    margin-top: 150px;
     border-top: 1px solid #E5E5E5;
 }
 
 .navbar-text {
     margin-left: 15px;
+}
+
+.navbar {
+    background-color: transparent;
 }

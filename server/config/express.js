@@ -17,21 +17,32 @@ var config = require('./environment');
 var passport = require('passport');
 // Set your secret key: remember to change this to your live secret key in production
 // See your keys here https://dashboard.stripe.com/account/apikeys
-var stripe = require("stripe")(
-  "sk_test_1PAKHEqD7GVWLCOqDPKXl3MU"
-);
+var stripe = require("stripe")("sk_test_1PAKHEqD7GVWLCOqDPKXl3MU");
 
-stripe.charges.create({
-  amount: 400,
-  currency: "usd",
-  source: "tok_16xiTPK94EkWQxgQ08oCJLpN", // obtained with Stripe.js
-  description: "Charge for test@example.com"
-}, function(err, charge) {
-  // asynchronously called
-});
+// (Assuming you're using express - expressjs.com)
+// Get the credit card details submitted by the form
 
 module.exports = function(app) {
   var env = app.get('env');
+  app.use(bodyParser());
+
+  app.post('/charge', function(req, res) {
+      var stripeToken = req.body.stripeToken;
+      var amount = '1000';
+
+      stripe.charges.create({
+          card: stripeToken,
+          currency: 'usd',
+          amount: amount
+      },
+      function(err, charge) {
+          if (err) {
+              res.send(500, err);
+          } else {
+              res.send(204);
+          }
+      });
+  });
 
   app.set('views', config.root + '/server/views');
   app.engine('html', require('ejs').renderFile);
