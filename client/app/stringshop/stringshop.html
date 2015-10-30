@@ -12,6 +12,9 @@
 
       <div class="list-group">
         <div class="row">
+          <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animate-inventory"
+               ng-repeat="item in filteredItems = ( ctrl.inventory | inventory : ctrl.searchText | orderBy: ['category', 'price'] )">
+          </div> -->
           <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 animate-inventory"
                ng-repeat="item in filteredItems = ( ctrl.inventory | inventory : ctrl.searchText | orderBy: ['category', 'price'] )">
             <a ng-click="ctrl.goItem(item)" class="list-group-item">
@@ -52,17 +55,20 @@
       <br>
       <button class="btn btn-danger" ng-click="ctrl.clearCart()">Clear Cart</button>
       <button class="btn btn-success">Checkout</button>
+
       <form action="/charge" method="POST">
-        <script
-          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="pk_test_JU2hP5DlgNHQWliLmIOTQaID"
-          data-image="/img/documentation/checkout/marketplace.png"
-          data-name="Demo Site"
-          data-description="2 widgets"
-          data-amount="2000"
-          data-locale="auto">
-        </script>
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_JU2hP5DlgNHQWliLmIOTQaID"
+        data-image="/img/documentation/checkout/marketplace.png"
+        data-name="Demo Site"
+        data-description="2 widgets"
+        data-amount="2000"
+        data-locale="auto">
+      </script>
       </form>
+
+      <script src="https://checkout.stripe.com/checkout.js"></script>
     </article>
   </div>
 </section>

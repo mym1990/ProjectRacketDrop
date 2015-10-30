@@ -1,6 +1,34 @@
+
+<div id="containerlogin"
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
+  <div class="login">
+    <div class="login-screen">
+      <div class="app-title">
+        <h1>Login</h1>
+      </div>
+      <form class="form" name="form" ng-submit="login(form)" novalidate>
+      <div class="login-form">
+        <div class="control-group">
+        <input type="email"  name="email" class="form-control" value="" placeholder="email" id="login-name" ng-model="user.email" required>
+        <label class="login-field-icon fui-user" for="login-name"></label>
+        </div>
+
+        <div class="control-group">
+        <input type="password" class="form-control" value="" placeholder="password" id="login-pass" ng-model="user.password" required>
+        <label class="login-field-icon fui-lock" for="login-pass"></label>
+        </div>
+
+        <button class="btnLogin btn-inverse btn-lg btn-login" type="submit">
+            Login
+        </button>
+<!--         <button class="login-link" href="#">Lost your password?</a>
+ -->    </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="container">
   <div class="row">
     <div class="col-sm-12">
       <h1>Login</h1>
@@ -52,4 +80,4 @@
     </div>
   </div>
   <hr>
-</div>
+</div> -->
