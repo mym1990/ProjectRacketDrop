@@ -12,6 +12,11 @@ var UserSchema = new Schema({
     type: String,
     default: 'user'
   },
+  skillLevel: {
+    type: Number,
+    min: 1,
+    max: 10
+  },
   hashedPassword: String,
   provider: String,
   salt: String,

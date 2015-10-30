@@ -31,18 +31,18 @@
 }
 
 #banner h1 {
-    font-family: 'Poiret One';
-    font-size: 72px;
+    font-family: 'Indie Flower';
+    font-size: 150px;
     letter-spacing: 3px;
-    top: 50px;
+    top: 80px;
     position: relative;
 }
 
 .hero-unit {
-    background: url('../../assets/images/TennisRacketBG2.jpg') no-repeat;
+    background: url('../../assets/images/tennisracketbgcolor.jpg') center no-repeat;
     background-size: cover;
     position: relative;
-    height: 500px;
+    height: 700px;
     padding: 30px 15px;
     color: #F5F5F5;
     text-align: center;

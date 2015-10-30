@@ -17,16 +17,15 @@
         <dt>Description:</dt>
         <dd>{{ ctrl.item.description }}</dd>
         <dt>Reviews:</dt>
-          <br>
-          <br>
+        <br>
         <li ng-repeat="review in ctrl.item.reviews">
           <blockquote>
-            Stars: {{review.stars}}
-            {{review.body}}
-            by: {{review.author}}
+            Stars: {{review.stars}}<br>
+            {{review.body}}<br>
+            <cite>{{review.author}}</cite>
           </blockquote>
         </li>
-      </dl>
+        </dl>
 
       <form name="reviewForm" ng-controller="StringShowController as reviewCtrl" ng-submit="reviewCtrl.addReview(reviewCtrl.item)">
         <blockquote>
